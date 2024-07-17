@@ -4,7 +4,7 @@ document.addEventListener("DOMContentLoaded", () => {
     let data = [];
     let activeTimeframe = 'daily';
 
-    fetch('./data.json').then((response) => {  
+    fetch('https://joshhovis.github.io/Time-Tracking-Dashboard/data.json').then((response) => {  
         if(!response.ok) {
             throw new Error('Oops! Something went wrong.');
         }
