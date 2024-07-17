@@ -1,6 +1,6 @@
 # Frontend Mentor - Time Tracking Dashboard solution
 
-This is a solution to the [Time tracking dashboard challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/time-tracking-dashboard-UIQ7167Jw/hub).
+This is a solution to the [Time tracking dashboard challenge on Frontend Mentor](https://www.frontendmentor.io/solutions/responsive-time-tracking-dashboard-hHVGzFIXm6).
 
 ### Screenshot
 
