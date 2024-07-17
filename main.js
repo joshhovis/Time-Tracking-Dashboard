@@ -30,7 +30,7 @@ const appendItem = (item, timeframe) => {
 
     <div class="list__item-content">
         <div class="list__item-content-header">
-            <p class="list__item-content-title">${item.title}</p>
+            <h2 class="list__item-content-title">${item.title}</h2>
             <button class="list__item-content-button">
                 <img class="list__item-content-ellipsis" src="./images/icon-ellipsis.svg" alt="ellipsis icon">
             </button>

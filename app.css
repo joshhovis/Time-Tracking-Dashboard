@@ -115,6 +115,7 @@ main {
 }
 .list__item-content-title {
   font-size: 1.125rem;
+  font-weight: 400;
 }
 .list__item-content-current {
   font-size: 2rem;
