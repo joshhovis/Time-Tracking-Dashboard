@@ -4,7 +4,7 @@ document.addEventListener("DOMContentLoaded", () => {
     let data = [];
     let activeTimeframe = 'daily';
 
-    fetch('/data.json').then((response) => {  
+    fetch('./data.json').then((response) => {  
         if(!response.ok) {
             throw new Error('Oops! Something went wrong.');
         }
@@ -78,7 +78,5 @@ document.addEventListener("DOMContentLoaded", () => {
         data.forEach((item) => {
             appendItem(item, timeframe);
         });
-        console.log(timeframe)
-        console.log(timeframeList);
     };
 })
