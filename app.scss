@@ -1,1 +1,163 @@
 @import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
+
+$primary: #1C204B;
+$very-dark-blue: #0f1424;
+$dark-blue: #1c1f4a;
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    color: white;
+    font-family: 'Rubik', sans-serif;
+    background-color: $very-dark-blue;
+}
+
+#main {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    gap: 20px;
+}
+
+.hero {
+    display: flex;
+    flex-direction: column;
+    background-color: $primary;
+    justify-content: center;
+    border-radius: 1rem;
+    margin-top: 30px;
+
+    &__user {
+        display: flex;
+        background-color: #5747EA;
+        justify-content: center;
+        gap: 20px;
+        padding: 20px 0;
+        border-radius: 1rem;
+        height: 8.3rem;
+
+        &-image {
+            width: 64px;
+            height: 64px;
+            border: 3px solid white;
+            border-radius: 50%;
+            margin: auto 0;
+        }
+
+        &-person {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            gap: 5px;
+        }
+
+        &-who {
+            font-size: 0.875rem;
+        }
+
+        &-name {
+            font-size: 1.5rem;
+            font-weight: 100;
+        }
+    }
+
+    &__timeframe {
+        list-style: none;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        color: #7078C9;
+
+        &-selection {
+            padding: 1rem;
+
+            &:hover, &:focus {
+                color: white;
+            }
+        }
+    }
+}
+
+.list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    &__item {
+        position: relative;
+        border-radius: 1rem;
+        width: 100%;
+        margin: 0 auto;
+
+        &-accent {
+            height: 10rem;
+            width: 100%;
+            border-radius: 1rem;
+
+            &-icon {
+                position: absolute;
+                right: 1.25rem;
+            }
+        }
+
+        &-content {
+            position: absolute;
+            z-index: 2;
+            border-radius: 1rem;
+            display: flex;
+            flex-direction: column;
+            bottom: -1px;
+            padding: 25px 20px;
+            height: 120px;
+            width: 100%;
+            background-color: #1C204B;
+            gap: 6px;
+
+            &-header {
+                display: flex;
+                justify-content: space-between;
+            }
+
+            &-footer {
+                display: flex;
+                justify-content: space-between;
+            }
+
+            &-title {
+                font-size: 1.125rem;
+            }
+
+            &-current {
+                font-size: 2rem;
+                font-weight: 100;
+            }
+
+            &-button {
+                border: none;
+                outline: none;
+                background: none;
+                z-index: 2;
+                margin: auto 0;
+                height: 20px;
+                display: flex;
+                align-items: center;
+                
+                &:focus {
+                }
+            }
+
+            &-ellipsis {
+            }
+
+            &-previous {
+                color: #BBC0FF;
+                font-size: .9375rem;
+                margin: auto 0;
+            }
+        }
+    }
+}

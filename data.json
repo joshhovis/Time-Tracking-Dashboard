@@ -1,6 +1,8 @@
 [
   {
     "title": "Work",
+    "icon": "./images/icon-work.svg",
+    "backgroundColor": "#FF8B64",
     "timeframes": {
       "daily": {
         "current": 5,
@@ -18,6 +20,8 @@
   },
   {
     "title": "Play",
+    "icon": "./images/icon-play.svg",
+    "backgroundColor": "#55C2E6",
     "timeframes": {
       "daily": {
         "current": 1,
@@ -35,6 +39,8 @@
   },
   {
     "title": "Study",
+    "icon": "./images/icon-study.svg",
+    "backgroundColor": "#FF5E7D",
     "timeframes": {
       "daily": {
         "current": 0,
@@ -52,6 +58,8 @@
   },
   {
     "title": "Exercise",
+    "icon": "./images/icon-exercise.svg",
+    "backgroundColor": "#4BCF82",
     "timeframes": {
       "daily": {
         "current": 1,
@@ -69,6 +77,8 @@
   },
   {
     "title": "Social",
+    "icon": "./images/icon-social.svg",
+    "backgroundColor": "#7335D2",
     "timeframes": {
       "daily": {
         "current": 1,
@@ -86,6 +96,8 @@
   },
   {
     "title": "Self Care",
+    "icon": "./images/icon-self-care.svg",
+    "backgroundColor": "#F1C75B",
     "timeframes": {
       "daily": {
         "current": 0,
