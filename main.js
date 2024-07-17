@@ -1,6 +1,8 @@
 document.addEventListener("DOMContentLoaded", () => {
-    const containerList = document.querySelector('.list');
-    const mainContainer = document.getElementById('main');
+    const containerList = document.getElementById('list');
+    const timeframeList = document.getElementById('timeframe');
+    let data = [];
+    let activeTimeframe = 'daily';
 
     fetch('/data.json').then((response) => {  
         if(!response.ok) {
@@ -8,25 +10,17 @@ document.addEventListener("DOMContentLoaded", () => {
         }
         return response.json();
     })
-    .then((data) => {
-        data.forEach((item) => {
-            appendItem(item);
-        });
+    .then((fetchedData) => {
+        data = fetchedData;
+        appendTimeframes(Object.keys(data[0].timeframes));
+
+        displayItems('daily');
     })
     .catch((error) => {
         console.log(error.message);
     });
 
-    const colorClasses = {
-        'Work': 'list__item-accent--work',
-        'Play': 'list__item-accent--play',
-        'Study': 'list__item-accent--study',
-        'Exercise': 'list__item-accent--exercise',
-        'Social': 'list__item-accent--social',
-        'Self Care': 'list__item-accent--selfcare',
-    }
-
-    const appendItem = (item) => {
+    const appendItem = (item, timeframe) => {
         const listItemContainer = document.createElement('div');
         listItemContainer.classList.add('list__item');
 
@@ -44,12 +38,47 @@ document.addEventListener("DOMContentLoaded", () => {
             </div>
                 
             <div class="list__item-content-footer">
-                <p class="list__item-content-current">${item.timeframes.weekly.current}hrs</p>
-                <p class="list__item-content-previous">Last Week - ${item.timeframes.weekly.previous}</p>
+                <p class="list__item-content-current">${item.timeframes[timeframe].current}hrs</p>
+                <p class="list__item-content-previous">Last Week - ${item.timeframes[timeframe].previous}</p>
             </div>
         </div>
         `
 
         containerList.appendChild(listItemContainer);
+    };
+
+    const appendTimeframes = (timeframes) => {
+        timeframes.forEach((timeframe) => {
+            const timeframeItem = document.createElement('li');
+            timeframeItem.classList.add('hero__timeframe-selection');
+            timeframeItem.setAttribute("id", timeframe)
+            timeframeItem.textContent = timeframe.charAt(0).toUpperCase() + timeframe.slice(1);
+            timeframeList.appendChild(timeframeItem);
+
+            timeframeItem.addEventListener('click', () => {
+                setActiveTimeframe(timeframeItem);
+                displayItems(timeframe);
+            });
+        });
+
+        document.getElementById(activeTimeframe).classList.add('active');
+    };
+
+    const setActiveTimeframe = (newActiveTime) => {
+        const previousActiveTime = document.querySelector('.hero__timeframe-selection.active');
+
+        if (previousActiveTime) previousActiveTime.classList.remove('active');
+
+        newActiveTime.classList.add('active')
+        activeTimeframe = newActiveTime.getAttribute('id');
+    }
+
+    const displayItems = (timeframe) => {
+        containerList.innerHTML = '';
+        data.forEach((item) => {
+            appendItem(item, timeframe);
+        });
+        console.log(timeframe)
+        console.log(timeframeList);
     };
 })

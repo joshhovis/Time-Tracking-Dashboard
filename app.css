@@ -11,7 +11,7 @@ body {
   background-color: #0f1424;
 }
 
-#main {
+main {
   display: flex;
   flex-direction: column;
   padding: 20px;
@@ -64,6 +64,9 @@ body {
 }
 .hero__timeframe-selection {
   padding: 1rem;
+}
+.hero__timeframe-selection.active {
+  color: white;
 }
 .hero__timeframe-selection:hover, .hero__timeframe-selection:focus {
   color: white;
@@ -134,7 +137,7 @@ body {
 }
 
 @media only screen and (min-width: 768px) {
-  #main {
+  main {
     padding: 20px 50px;
   }
   .list {
@@ -156,7 +159,7 @@ body {
     display: flex;
     margin: auto auto;
   }
-  #main {
+  main {
     width: 85%;
     height: 60%;
     margin: auto auto;
@@ -169,6 +172,7 @@ body {
   .hero {
     margin: 0;
     justify-content: start;
+    width: 20%;
   }
   .hero__user {
     height: 68%;
@@ -228,5 +232,10 @@ body {
   }
   .list__item-content-current {
     font-size: 3.5rem;
+  }
+}
+@media only screen and (min-width: 1880px) {
+  .hero {
+    width: 15%;
   }
 }/*# sourceMappingURL=app.css.map */

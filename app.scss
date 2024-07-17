@@ -16,7 +16,7 @@ body {
     background-color: $very-dark-blue;
 }
 
-#main {
+main {
     display: flex;
     flex-direction: column;
     padding: 20px;
@@ -74,6 +74,10 @@ body {
 
         &-selection {
             padding: 1rem;
+
+            &.active {
+                color: white;
+            }
 
             &:hover, &:focus {
                 color: white;
@@ -157,7 +161,7 @@ body {
 }
 
 @media only screen and (min-width: 768px) {
-    #main {
+    main {
         padding: 20px 50px;
     }
 
@@ -183,7 +187,7 @@ body {
         margin: auto auto;
     }
 
-    #main {
+    main {
         width: 85%;
         height: 60%;
         margin: auto auto;
@@ -197,6 +201,7 @@ body {
     .hero {
         margin: 0;
         justify-content: start;
+        width: 20%;
 
         &__user {
             height: 68%;
@@ -272,5 +277,11 @@ body {
                 }
             }
         }
+    }
+}
+
+@media only screen and (min-width: 1880px) {
+    .hero {
+        width: 15%;
     }
 }
