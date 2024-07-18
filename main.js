@@ -14,6 +14,7 @@ fetch('https://joshhovis.github.io/Time-Tracking-Dashboard/data.json').then((res
     appendTimeframes(Object.keys(data[0].timeframes));
 
     displayItems('daily');
+    setActiveTimeframe(document.getElementById('daily'));
 })
 .catch((error) => {
     console.log(error.message);
@@ -22,6 +23,11 @@ fetch('https://joshhovis.github.io/Time-Tracking-Dashboard/data.json').then((res
 const appendItem = (item, timeframe) => {
     const listItemContainer = document.createElement('div');
     listItemContainer.classList.add('list__item');
+
+    let previousText = '';
+    if (timeframe === 'daily') previousText = 'Yesterday';
+        else if (timeframe === 'weekly') previousText = 'Last Week';
+        else previousText = 'Last Month';
 
     listItemContainer.innerHTML = `
     <div class="list__item-accent" style="background-color: ${item.backgroundColor}">
@@ -38,7 +44,7 @@ const appendItem = (item, timeframe) => {
             
         <div class="list__item-content-footer">
             <p class="list__item-content-current">${item.timeframes[timeframe].current}hrs</p>
-            <p class="list__item-content-previous">Last Week - ${item.timeframes[timeframe].previous}</p>
+            <p class="list__item-content-previous">${previousText} - ${item.timeframes[timeframe].previous}</p>
         </div>
     </div>
     `
