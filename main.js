@@ -29,6 +29,12 @@ const appendItem = (item, timeframe) => {
         else if (timeframe === 'weekly') previousText = 'Last Week';
         else previousText = 'Last Month';
 
+    const currentHours = item.timeframes[timeframe].current;
+    const previousHours = item.timeframes[timeframe].previous;
+
+    const currentHoursText = currentHours === 1 ? 'hr' : 'hrs';
+    const previousHoursText = previousHours === 1 ? 'hr' : 'hrs';
+
     listItemContainer.innerHTML = `
     <div class="list__item-accent" style="background-color: ${item.backgroundColor}">
         <img class="list__item-accent-icon" src="${item.icon}" alt="${item.title} icon" />
@@ -43,8 +49,8 @@ const appendItem = (item, timeframe) => {
         </div>
             
         <div class="list__item-content-footer">
-            <p class="list__item-content-current">${item.timeframes[timeframe].current}hrs</p>
-            <p class="list__item-content-previous">${previousText} - ${item.timeframes[timeframe].previous}</p>
+            <p class="list__item-content-current">${currentHours} ${currentHoursText}</p>
+            <p class="list__item-content-previous">${previousText} - ${previousHours} ${previousHoursText}</p>
         </div>
     </div>
     `
