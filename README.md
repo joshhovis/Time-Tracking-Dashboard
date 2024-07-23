@@ -28,3 +28,6 @@ This is a solution to the [Time tracking dashboard challenge on Frontend Mentor]
 -   Website - [GitHub](https://github.com/joshhovis)
 -   LinkedIn - [LinkedIn](https://www.linkedin.com/in/joshua-hovis/)
 -   Frontend Mentor - [@joshhovis](https://www.frontendmentor.io/profile/joshhovis)
+
+### Future Features
+- Add CRUD Capabilites
